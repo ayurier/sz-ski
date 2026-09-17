@@ -317,9 +317,8 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <section class="page" role="tabpanel">
   <div class="dayhead">
     <span class="dt">行前</span>
-    <h2>出發前要處理完的事</h2>
+    <h2>出發前的準備</h2>
     <div class="meta">
-      <span class="pill"><span class="mk mk-flat"></span>購票截止 <b>9/28</b></span>
       <span class="pill">總預算 <b>¥6,676</b></span>
       <span class="pill">約 <b>NT$31,000</b></span>
     </div>
@@ -368,13 +367,13 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <h3 class="sec">攜帶清單</h3>
   <ul class="check" id="cl">
     <li><label><input type="checkbox" data-k="c1"><span><span class="tag">必備</span>台胞證正本 — 每天進雪場都要核對，人證不符無法入園</span></label></li>
-    <li><label><input type="checkbox" data-k="c2c"><span><span class="tag">必備</span>9/28–9/30 淡季票 ×3（售票只到 9/28，9/27 已購）</span></label></li>
     <li><label><input type="checkbox" data-k="c3"><span><span class="tag">必備</span>旅平險＋海外醫療，確認滑雪未被列為除外責任</span></label></li>
     <li><label><input type="checkbox" data-k="c5"><span>中國 eSIM（主）＋ 台灣門號漫遊（備援）</span></label></li>
     <li><label><input type="checkbox" data-k="c6"><span>高德地圖／支付寶／微信綁卡，另備 ¥500 現金</span></label></li>
     <li><label><input type="checkbox" data-k="c7"><span>滑雪長襪 ×4</span></label></li>
     <li><label><input type="checkbox" data-k="c8"><span>排汗底層衣 ×4（羊毛材質較佳，場內不能中途出來換）</span></label></li>
     <li><label><input type="checkbox" data-k="c16"><span>雪外套、雪褲各 1 套（每晚務必除濕吹乾）</span></label></li>
+    <li><label><input type="checkbox" data-k="c17"><span>保溫中層（抓毛或輕羽絨）—— 場內 −5 至 −10°C，比想像冷</span></label></li>
     <li><label><input type="checkbox" data-k="c9"><span>滑雪手套、護腕</span></label></li>
     <li><label><input type="checkbox" data-k="c10"><span>軟式護膝（非溜冰硬式）</span></label></li>
     <li><label><input type="checkbox" data-k="c11"><span>防摔褲（選配）</span></label></li>
@@ -385,15 +384,42 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <h3 class="sec">雪道規格</h3>
   <div class="tblwrap">
   <table>
-    <thead><tr><th>雪道</th><th>長度</th><th>坡度</th><th>上山方式</th></tr></thead>
+    <thead><tr><th>雪道</th><th class="num">長度</th><th class="num">坡度</th><th class="num">落差</th></tr></thead>
     <tbody>
-      <tr><td>初級道</td><td>約 170 m</td><td>&lt; 10°</td><td>魔毯，免掃卡</td></tr>
-      <tr><td>中級道</td><td>約 400 m</td><td>13°</td><td>中級纜車</td></tr>
-      <tr><td>高級道</td><td>約 400 m</td><td>18°</td><td>2 號快纜</td></tr>
+      <tr><td>初學者道</td><td class="num">132 m</td><td class="num">7.9°</td><td class="num">11.1 m</td></tr>
+      <tr><td>初級道</td><td class="num">172 m</td><td class="num">9.9°</td><td class="num">20.7 m</td></tr>
+      <tr><td><b>初中級道</b></td><td class="num">463 m</td><td class="num">9.9–13.7°</td><td class="num">83 m</td></tr>
+      <tr><td>中級道</td><td class="num">410 m</td><td class="num">13.1–13.7°</td><td class="num">83 m</td></tr>
+      <tr><td>高級道</td><td class="num">392 m</td><td class="num">18°</td><td class="num">83 m</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="lead">中級道與高級道山頂互通，搭較快的 2 號纜車上山再繞回中級道，刷道效率最高。室內恆溫 −3 至 −6°C，營業至 22:00。</p>
+  <p class="lead">全場 10 萬 m²、垂直落差 83 m，採國際雪聯（FIS）認證標準。上山有 2 條高速 4 人座纜車（通往中級與高級道）與 5 條魔毯。後三條雪道落差同為 83 m，代表山頂共用，可自由切換。<b>初中級道 463 m 是全場最長</b>，想刷長距離選這條。室內溫度約 <b>−5 至 −10°C</b>（現場教練回報，比一般室內雪場更冷），營業至 22:00。</p>
+
+  <h3 class="sec">雪道實況與安全</h3>
+  <div class="notes" style="border-top:0;padding-top:4px">
+    <div class="note hot"><span class="ic">01</span><p><b>魔毯只到雪道一半，上不了山頂。</b>要到山頂只能坐纜車。而上高級道的 <b>2 號纜車是高速纜車</b>，初學者常在那裡跌倒。</p></div>
+    <div class="note hot"><span class="ic">02</span><p><b>不要停在纜車正下方。</b>很多人怕在高速纜車跌倒而選擇抱板上車，板子有機會中途掉落，現場教練說親眼見過。</p></div>
+    <div class="note"><span class="ic">03</span><p>華發把<b>單板與雙板分了專用區</b>，單板區通常人比較多。</p></div>
+    <div class="note"><span class="ic">04</span><p>雪質整體結實不鬆散，但開業初期造雪不穩，<b>曾出現冰面</b>。高級道刻意做得比上海、廣州平緩，目的是分流。</p></div>
+    <div class="note"><span class="ic">05</span><p>取票機已整合，滑雪票與娛雪票同一部機取，不用分隊。</p></div>
+  </div>
+
+  <h3 class="sec">場內設施</h3>
+  <div class="tblwrap">
+  <table>
+    <thead><tr><th>設施</th><th>位置與規則</th></tr></thead>
+    <tbody>
+      <tr><td><b>醫務室</b></td><td>冷區壓雪車庫旁通道</td></tr>
+      <tr><td>冷區廁所</td><td>2 號索道東側（進場後唯一的冷區廁所）</td></tr>
+      <tr><td>置物櫃</td><td>1／2／3 樓暖區大廳，當天掃碼免費租，押金 ¥20，每人限一櫃，中途可多次開關</td></tr>
+      <tr><td>大件行李</td><td>1 樓雪具大廳存包處，登記後當天免費寄存</td></tr>
+      <tr><td>手機充電</td><td>3 處：1F 氣閘間出入口、2F 寄存區旁、3F 氣閘間出入口</td></tr>
+      <tr><td>Wi-Fi</td><td>全場覆蓋</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="lead">雪場分三層：1 樓滑雪、2 樓娛雪、3 樓酒店。冷區與暖區之間設有氣閘。置物櫃小櫃（高 61 × 寬 30 cm）放不下 24 吋以上行李箱，大件要走存包處。</p>
 </section>
 
 <!-- ══════════ P1 交通 ══════════ -->
@@ -559,6 +585,15 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     </div>
   </div>
 
+  <h3 class="sec">館內餐飲：先降低期待</h3>
+  <div class="notes" style="border-top:0;padding-top:4px">
+    <div class="note hot"><span class="ic">01</span><p><b>園區商場只開了一小部分。</b>直接連著雪場的商場目前以雪具店（買、租、寄存）、運動按摩與少數餐廳為主，休閒餐飲設施還不足。整個華發園區仍在建設中，JW 萬豪與 Funmix 商業街都還沒好。</p></div>
+    <div class="note hot"><span class="ic">02</span><p><b>場內吃飯的實際解法是叫外送。</b>在雪場任教的教練直接建議：<b>點美團外賣</b>，或在商場餐廳吃。你連吃三天午餐，這是唯一能換口味的方法。</p></div>
+    <div class="note"><span class="ic">03</span><p>室內雪場本身設有<b>餐飲區、休息區、租賃區與 VIP 室</b>，午餐在冷區暖區之間的暖區大廳解決。</p></div>
+    <div class="note"><span class="ic">04</span><p>我沒有找到可靠的館內具名餐廳清單 —— 雪場 2025 年 9 月才開幕，商家仍在進駐。<b>落地後用美團或大眾點評看即時清單最準。</b></p></div>
+    <div class="note"><span class="ic">05</span><p>想看現場實況，Facebook 有「深圳華發、卡魯／廣州融創滑雪交流」社團，滑雪的人會分享當日雪場與周邊狀況。</p></div>
+  </div>
+
   <h3 class="sec">每日餐飲配置</h3>
   <div class="tblwrap">
   <table>
@@ -596,7 +631,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 
   <h3 class="sec">四個實務提醒</h3>
   <div class="notes" style="border-top:0;padding-top:4px">
-    <div class="note hot"><span class="ic">01</span><p><b>場內餐廳連吃三天會膩，而且偏貴。</b>建議帶能量棒、堅果進場備用，中午吃不下就少吃一點，撐到晚餐。</p></div>
+    <div class="note hot"><span class="ic">01</span><p><b>場內餐廳連吃三天會膩，而且偏貴。</b>帶能量棒、堅果進場備用；想換口味就用<b>美團外賣</b>叫到雪場，全場有 Wi-Fi，點餐不是問題。</p></div>
     <div class="note hot"><span class="ic">02</span><p><b>9/30 晚餐是黃金週前夕，餐廳會滿。</b>想吃好一點的就用大眾點評提前訂位，或 19:00 前先進去。</p></div>
     <div class="note"><span class="ic">03</span><p><b>山姆會員店要會員卡才能進。</b>想去補貨得先辦卡或請人代購。一般超市買水和零食就夠了。</p></div>
     <div class="note"><span class="ic">04</span><p>滑雪前<b>不要吃太飽</b>。9/27 的午餐尤其注意，13:00 吃、16:00 入場，中間只有 3 小時。</p></div>
@@ -627,7 +662,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     <div class="stop"><span class="t">11:40</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-hotel"/></svg></span><span class="c">飯店 Check-in、卸行李</span></div>
     <div class="stop"><span class="t">13:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-food"/></svg></span><span class="c">午餐、補給、休息</span></div>
     <div class="stop"><span class="t">15:20</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-shirt"/></svg></span><span class="c">到雪場，場外換好底層衣與雪服<em>板、固定器、安全帽在場內領，雪鞋在場內租</em></span></div>
-    <div class="stop"><span class="t">15:40</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-locker"/></svg></span><span class="c">置物櫃寄放便服</span></div>
+    <div class="stop"><span class="t">15:40</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-locker"/></svg></span><span class="c">置物櫃寄放便服<em>掃碼免費租，押金 ¥20，每人限一櫃</em></span></div>
     <div class="stop key"><span class="t">16:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ticket"/></svg></span><span class="c">掃碼入場 — 計時開始</span></div>
     <div class="stop"><span class="t">16:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">初級道熱身（170m，坡度 &lt;10°）</span></div>
     <div class="stop"><span class="t">17:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">中級道找雪感（400m，坡度 13°）</span></div>
@@ -643,8 +678,9 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     <div class="note"><span class="ic">03</span><p>今天是中級票，<b>上不了高級道</b>。中級道 400m、13°，熱身完全夠用。</p></div>
     <div class="note"><span class="ic">04</span><p><b>掃碼進場後不能中途出來。</b>領板時當場確認固定器角度和雪鞋尺寸，進去之後才發現不對，只能在閘口處理。</p></div>
     <div class="note"><span class="ic">05</span><p>票卡綁在<b>外套手臂上</b>，纜車閘口每趟都要掃。</p></div>
-    <div class="note"><span class="ic">06</span><p>務必先回飯店卸行李再去雪場。大行李箱雖然可託給租借櫃台，但多一道麻煩。</p></div>
-    <div class="note"><span class="ic">07</span><p><b>回飯店第一件事：把雪褲和外套攤開除濕。</b>只有一套，明天還要穿，不要拖到洗完澡才弄。</p></div>
+    <div class="note"><span class="ic">06</span><p>務必先回飯店卸行李再去雪場。雪場 1 樓存包處雖然當天免費寄大件行李，但登記、領取多兩道手續，而且你的置物櫃小櫃放不下 24 吋行李箱。</p></div>
+    <div class="note"><span class="ic">07</span><p><b>進場前記住兩個位置：</b>醫務室在<b>冷區壓雪車庫旁通道</b>，冷區廁所在<b>2 號索道東側</b>。掃碼後出不去，這兩個要靠自己找。</p></div>
+    <div class="note"><span class="ic">08</span><p><b>回飯店第一件事：把雪褲和外套攤開除濕。</b>只有一套，明天還要穿，不要拖到洗完澡才弄。</p></div>
   </div>
 </section>
 <!-- ══════════ P5 9/28 ══════════ -->
@@ -676,7 +712,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <div class="notes">
     <h3>注意事項</h3>
     <div class="note hot"><span class="ic">01</span><p><b>每段課中間跟教練要一次休息。</b>連續 3 小時太長，技術動作靠神經肌肉記憶，疲勞狀態下練會把錯誤姿勢固化。開課時就先講好：約 90 分鐘休 10 分鐘。</p></div>
-    <div class="note hot"><span class="ic">02</span><p><b>自主練習最多 2 小時，狀況不好就縮短。</b>今天在場內約 9 小時，是四天最長的一天，而明天是痠痛峰值。這 2 小時是唯一能砍的部分。</p></div>
+    <div class="note hot"><span class="ic">02</span><p><b>自主練習最多 2 小時，狀況不好就縮短。</b>今天在場內約 9 小時，是四天最長的一天，後面還有兩天。這 2 小時是唯一能砍的部分。</p></div>
     <div class="note"><span class="ic">03</span><p>第二段課結束後<b>立刻自主重複</b>，趁記憶還熱。隔天再練，效果掉一半。</p></div>
     <div class="note"><span class="ic">04</span><p>午餐只能在場內餐廳解決。<b>掃碼後無法出場</b>，早上進去前先想好水和補給。中午只有 1 小時，動作要快。</p></div>
     <div class="note"><span class="ic">05</span><p><b>教練費不含雪票與裝備。</b>今天要自己帶票入場、租雪鞋（¥50），雪板、固定器、安全帽由雪票提供。</p></div>
@@ -688,33 +724,32 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <section class="page" role="tabpanel">
   <div class="dayhead">
     <span class="dt">9/29<span class="wd"> 週二</span></span>
-    <h2>調節日 — 最容易受傷的一天</h2>
+    <h2>調節日</h2>
     <div class="meta">
       <span class="pill"><span class="mk mk-blue"></span>強度 <b>中</b></span>
       <span class="pill">高級不限時 <b>¥500</b></span>
       <span class="pill">雪鞋 <b>¥50</b></span>
-      <span class="pill">肌肉痠痛峰值</span>
+      <span class="pill">彈性最大的一天</span>
     </div>
   </div>
 
   <div class="tl">
-    <div class="stop"><span class="t">09:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-stretch"/></svg></span><span class="c">早餐、暖身<em>今天暖身時間拉長到 15 分鐘</em></span></div>
+    <div class="stop"><span class="t">09:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-stretch"/></svg></span><span class="c">早餐、暖身<em>髖、踝、股四頭，10 分鐘</em></span></div>
     <div class="stop key"><span class="t">10:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ticket"/></svg></span><span class="c">入場</span></div>
     <div class="stop"><span class="t">10:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">中級道刷道<em>搭 2 號快纜上山、繞回中級道，趟數效率最高</em></span></div>
     <div class="stop"><span class="t">13:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-food"/></svg></span><span class="c">場內午餐＋長休息<em>90 分鐘，不要縮短</em></span></div>
     <div class="stop"><span class="t">14:30</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">中級道為主，狀況好再上高級道</span></div>
-    <div class="stop key"><span class="t">18:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="c">收工<em>狀況好可延到 20:00，但先確認腿不抖</em></span></div>
+    <div class="stop key"><span class="t">18:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="c">收工<em>狀況好可延到 20:00</em></span></div>
     <div class="stop"><span class="t">19:30</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-stretch"/></svg></span><span class="c">晚餐、拉伸</span></div>
   </div>
 
   <div class="notes">
     <h3>注意事項</h3>
-    <div class="note hot"><span class="ic">01</span><p><b>今天是股四頭肌最痛的一天。</b>延遲性肌肉痠痛的峰值落在運動後 24–48 小時 —— 9/27 晚上開滑、9/28 整天上課，痠痛正好疊在今天。這天硬撐，受傷機率最高。</p></div>
-    <div class="note hot"><span class="ic">02</span><p><b>腿開始抖就停。</b>不要「再滑最後一趟」。多數滑雪受傷就發生在當天最後一趟。</p></div>
-    <div class="note"><span class="ic">03</span><p>中級道和高級道<b>山頂互通</b>。想提高刷道效率，搭速度較快的 2 號纜車上去，再繞回中級道滑。</p></div>
-    <div class="note"><span class="ic">04</span><p>室內 −3 至 −6°C 但<b>濕度高</b>，流汗後底層衣濕掉會很冷，而且無法中途出場更換。多喝水，脫水常常沒有感覺。</p></div>
-    <div class="note"><span class="ic">05</span><p>山頂有飲料櫃可以放水，善用。</p></div>
-    <div class="note"><span class="ic">06</span><p>這是行程裡<b>唯一有彈性的一天</b>。狀況比預期好可以延到 20:00，但延之前先確認腿不抖。</p></div>
+    <div class="note hot"><span class="ic">01</span><p><b>腿開始抖就停。</b>不要「再滑最後一趟」。多數滑雪受傷就發生在當天最後一趟。</p></div>
+    <div class="note"><span class="ic">02</span><p>中級道和高級道<b>山頂互通</b>。想提高刷道效率，搭速度較快的 2 號纜車上去，再繞回中級道滑。</p></div>
+    <div class="note"><span class="ic">03</span><p>室內約 <b>−5 至 −10°C</b> 且濕度高，流汗後底層衣濕掉會很冷，而且無法中途出場更換。多喝水，脫水常常沒有感覺。</p></div>
+    <div class="note"><span class="ic">04</span><p>山頂有飲料櫃可以放水，善用。</p></div>
+    <div class="note"><span class="ic">05</span><p>這是行程裡<b>唯一有彈性的一天</b>。狀況好可以延到 20:00，隔天還有一整天要滑，自己抓。</p></div>
   </div>
 </section>
 
@@ -736,7 +771,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     <div class="stop"><span class="t">10:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">全力刷中／高級道<em>技術狀態四天最好的時候</em></span></div>
     <div class="stop"><span class="t">13:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-food"/></svg></span><span class="c">場內午餐</span></div>
     <div class="stop key"><span class="t">14:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span><span class="c">高級道練陡坡<em>400m、坡度 18°</em></span></div>
-    <div class="stop key"><span class="t">17:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-locker"/></svg></span><span class="c">收工，退還雪鞋與雪具<em>確認押金退回、置物櫃清空</em></span></div>
+    <div class="stop key"><span class="t">17:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-locker"/></svg></span><span class="c">收工，退還雪鞋與雪具<em>置物櫃清空，確認 ¥20 押金退回</em></span></div>
     <div class="stop"><span class="t">18:30</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-luggage"/></svg></span><span class="c">回飯店洗澡、整理行李</span></div>
     <div class="stop"><span class="t">20:00</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-food"/></svg></span><span class="c">會展城／沙井最後一餐</span></div>
     <div class="stop key"><span class="t">21:30</span><span class="n"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg></span><span class="c">請櫃檯預約明早機場車</span></div>
@@ -747,7 +782,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     <h3>注意事項</h3>
     <div class="note hot"><span class="ic">01</span><p><b>今晚一定要預約明早的機場車。</b>10/1 是國慶黃金週第一天，現場叫車會漲價、等很久。若櫃檯訂不到，改用高德或滴滴的<b>預約叫車</b>功能，先把單下掉。這是整趟行程唯一沒有補救空間的環節。</p></div>
     <div class="note"><span class="ic">02</span><p>四天下來身體最熟悉雪感的就是今天，<b>把教練教的動作在高級道上驗證一次</b>，回台灣才記得住。</p></div>
-    <div class="note"><span class="ic">03</span><p>退還雪鞋與雪具時<b>確認押金退回</b>，置物櫃也要清空。</p></div>
+    <div class="note"><span class="ic">03</span><p>退還雪鞋與雪具時<b>確認置物櫃 ¥20 押金退回</b>。櫃子沒清空隔夜要另收 ¥50／天。</p></div>
     <div class="note"><span class="ic">04</span><p>回程託運 <b>1 件 23kg</b>。雪服雪褲收納體積大，若在雪具店買了東西，今晚先秤，超重明天在機場處理會很趕。</p></div>
     <div class="note"><span class="ic">05</span><p>不限時票可以滑到 22:00，但<b>建議 17:00 準時收</b>。今天是第四天連滑，明天還要搭機，多滑那幾小時換不到什麼，受傷卻要付全額代價。</p></div>
   </div>

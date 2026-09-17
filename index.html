@@ -73,6 +73,14 @@ body{
   color:#F2FAFE;border-color:#3C89B5;
   box-shadow:0 0 0 1px rgba(95,211,240,.16),0 3px 14px rgba(0,0,0,.4);
 }
+.grp{
+  flex:0 0 auto;align-self:center;
+  font-size:10px;letter-spacing:.18em;color:var(--faint);
+  padding:0 4px 0 2px;white-space:nowrap;
+}
+.sep{flex:0 0 auto;width:1px;align-self:stretch;margin:4px 6px;background:var(--rule)}
+.tab.ref{border-style:dashed}
+.tab.ref[aria-selected="true"]{border-style:solid}
 .mk{display:inline-block;width:9px;height:9px;flex:0 0 auto}
 .mk-green{background:var(--green);border-radius:50%}
 .mk-blue{background:var(--blue)}
@@ -251,13 +259,14 @@ p.lead{font-size:13px;color:var(--slate);margin:12px 0 0;line-height:1.75}
 .nav button{
   font-family:inherit;font-size:13px;font-weight:600;
   border:1px solid var(--rule);background:var(--chip);color:var(--ink);
-  border-radius:999px;padding:9px 18px;cursor:pointer;min-width:88px;transition:.18s;
+  border-radius:999px;padding:9px 18px;cursor:pointer;min-width:96px;transition:.18s;white-space:nowrap;
 }
 .nav button:disabled{opacity:.28;cursor:default}
 .nav button:not(:disabled):hover{border-color:var(--ice);color:var(--ice)}
 .nav .pos{
-  font-family:Archivo,sans-serif;font-size:12px;font-weight:600;
-  color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em;
+  font-size:12px;font-weight:600;color:var(--slate);
+  letter-spacing:.02em;text-align:center;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;
 }
 button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--ice);outline-offset:2px}
 
@@ -309,15 +318,18 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   </div>
 
   <div class="tabs" role="tablist" id="tabs">
-    <button class="tab" role="tab" data-i="0"><span class="mk mk-flat"></span>行前</button>
-    <button class="tab" role="tab" data-i="1"><span class="mk mk-flat"></span>交通</button>
-    <button class="tab" role="tab" data-i="2"><span class="mk mk-flat"></span>地圖</button>
-    <button class="tab" role="tab" data-i="3"><span class="mk mk-flat"></span>美食</button>
-    <button class="tab" role="tab" data-i="4"><span class="mk mk-blue"></span>9/27 日</button>
-    <button class="tab" role="tab" data-i="5"><span class="mk mk-black"></span>9/28 一</button>
-    <button class="tab" role="tab" data-i="6"><span class="mk mk-blue"></span>9/29 二</button>
-    <button class="tab" role="tab" data-i="7"><span class="mk mk-black"></span>9/30 三</button>
-    <button class="tab" role="tab" data-i="8"><span class="mk mk-green"></span>10/1 四</button>
+    <span class="grp">參考</span>
+    <button class="tab ref" role="tab" data-i="0" data-kind="ref" data-name="行前準備">行前</button>
+    <button class="tab ref" role="tab" data-i="1" data-kind="ref" data-name="交通">交通</button>
+    <button class="tab ref" role="tab" data-i="2" data-kind="ref" data-name="地圖">地圖</button>
+    <button class="tab ref" role="tab" data-i="3" data-kind="ref" data-name="美食">美食</button>
+    <span class="sep"></span>
+    <span class="grp">行程</span>
+    <button class="tab" role="tab" data-i="4" data-kind="day" data-name="Day 1 · 9/27 週日"><span class="mk mk-blue"></span>9/27 日</button>
+    <button class="tab" role="tab" data-i="5" data-kind="day" data-name="Day 2 · 9/28 週一"><span class="mk mk-black"></span>9/28 一</button>
+    <button class="tab" role="tab" data-i="6" data-kind="day" data-name="Day 3 · 9/29 週二"><span class="mk mk-blue"></span>9/29 二</button>
+    <button class="tab" role="tab" data-i="7" data-kind="day" data-name="Day 4 · 9/30 週三"><span class="mk mk-black"></span>9/30 三</button>
+    <button class="tab" role="tab" data-i="8" data-kind="day" data-name="Day 5 · 10/1 週四"><span class="mk mk-green"></span>10/1 四</button>
   </div>
 <!-- ══════════ P0 行前 ══════════ -->
 <section class="page" role="tabpanel">
@@ -859,7 +871,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <nav class="nav">
   <div class="navin">
     <button id="prev" type="button">← 前一天</button>
-    <span class="pos" id="pos">1 / 9</span>
+    <span class="pos" id="pos">行前準備</span>
     <button id="next" type="button">後一天 →</button>
   </div>
 </nav>
@@ -873,7 +885,17 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     i=Math.max(0,Math.min(pages.length-1,n));
     pages.forEach(function(p,k){p.classList.toggle('on',k===i)});
     tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false')});
-    pos.textContent=(i+1)+' / '+pages.length;
+    var kinds=[],names=[];
+    tabs.forEach(function(t){kinds.push(t.dataset.kind);names.push(t.dataset.name)});
+    pos.textContent=names[i]||'';
+    function label(j,dir){
+      if(j<0||j>=pages.length) return dir<0?'← 上一頁':'下一頁 →';
+      if(kinds[i]==='day'&&kinds[j]==='day') return dir<0?'← 前一天':'後一天 →';
+      if(kinds[i]==='ref'&&kinds[j]==='day') return '行程 →';
+      if(kinds[i]==='day'&&kinds[j]==='ref') return '← 參考';
+      return dir<0?'← 上一頁':'下一頁 →';
+    }
+    prev.textContent=label(i-1,-1); next.textContent=label(i+1,1);
     prev.disabled=(i===0); next.disabled=(i===pages.length-1);
     window.scrollTo(0,0);
     var at=tabs[i]; if(at&&at.scrollIntoView) at.scrollIntoView({block:'nearest',inline:'center'});

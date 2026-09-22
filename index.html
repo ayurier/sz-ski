@@ -240,6 +240,25 @@ p.lead{font-size:13px;color:var(--slate);margin:12px 0 0;line-height:1.75}
   margin:20px 0 0;overflow-x:auto;padding:16px 8px;
   border-radius:14px;background:var(--card);border:1px solid var(--rule);
 }
+.addr{margin:18px 0 0;display:flex;flex-direction:column;gap:8px}
+.addr .row{
+  display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center;
+  padding:13px 14px;border-radius:12px;background:var(--card);border:1px solid var(--rule);
+}
+.addr .ico{
+  width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:var(--raise);border:1px solid var(--rule);color:var(--ice);
+}
+.addr .ico svg{width:18px;height:18px}
+.addr .nm{font-size:14px;font-weight:700;line-height:1.4}
+.addr .ad{font-size:12.5px;color:var(--slate);line-height:1.5;margin-top:2px;word-break:break-all}
+.addr .cp{
+  font-family:inherit;font-size:12px;font-weight:700;white-space:nowrap;cursor:pointer;
+  border:1px solid #3C89B5;border-radius:999px;padding:8px 14px;color:#EAF8FF;
+  background:linear-gradient(160deg,#2F7EA8,#1D4E6D);transition:.15s;
+}
+.addr .cp:active{transform:scale(.96)}
+.addr .cp.ok{background:linear-gradient(160deg,#3FA37E,#23684F);border-color:#5FD3A8}
 .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 0}
 .shots figure{margin:0;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--rule)}
 .shots img{display:block;width:100%;height:auto}
@@ -452,6 +471,26 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
       <span class="pill">飯店↔雪場 <b>2.7 km · 10 分</b></span>
     </div>
   </div>
+
+  <h3 class="sec">三個目的地</h3>
+  <div class="addr">
+    <div class="row">
+      <span class="ico"><svg viewBox="0 0 24 24"><use href="#i-plane-down"/></svg></span>
+      <div><div class="nm">深圳宝安国际机场 T3 航站楼</div><div class="ad">深圳市宝安区航城街道</div></div>
+      <button class="cp" type="button" data-copy="深圳宝安国际机场T3航站楼">複製</button>
+    </div>
+    <div class="row">
+      <span class="ico"><svg viewBox="0 0 24 24"><use href="#i-hotel"/></svg></span>
+      <div><div class="nm">汇展湾国际酒店（深圳国际会展中心前海冰雪世界店）</div><div class="ad">深圳市宝安区沙井街道和一社区锦程路文丰楼 113</div></div>
+      <button class="cp" type="button" data-copy="汇展湾国际酒店（深圳国际会展中心前海冰雪世界店） 深圳市宝安区沙井街道和一社区锦程路文丰楼113">複製</button>
+    </div>
+    <div class="row">
+      <span class="ico"><svg viewBox="0 0 24 24"><use href="#i-ski"/></svg></span>
+      <div><div class="nm">华发前海冰雪世界</div><div class="ad">深圳市宝安区滨江大道 666 号</div></div>
+      <button class="cp" type="button" data-copy="华发前海冰雪世界 深圳市宝安区滨江大道666号">複製</button>
+    </div>
+  </div>
+  <p class="lead">用簡體字，貼到高德、滴滴或傳給司機都能直接辨識。複製內容包含名稱與地址。</p>
 
   <h3 class="sec">A. 機場 T3 → 飯店（9/27）</h3>
   <div class="tblwrap">
@@ -917,6 +956,30 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
     if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.8) show(dx<0?i+1:i-1);
     x0=null;y0=null;
   },{passive:true});
+  function copyText(t){
+    if(navigator.clipboard&&window.isSecureContext){
+      return navigator.clipboard.writeText(t);
+    }
+    return new Promise(function(res,rej){
+      var ta=document.createElement('textarea');
+      ta.value=t;ta.setAttribute('readonly','');
+      ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy')?res():rej()}catch(e){rej(e)}
+      document.body.removeChild(ta);
+    });
+  }
+  document.querySelectorAll('.cp').forEach(function(b){
+    b.addEventListener('click',function(){
+      copyText(b.dataset.copy).then(function(){
+        b.textContent='已複製';b.classList.add('ok');
+        setTimeout(function(){b.textContent='複製';b.classList.remove('ok')},1600);
+      },function(){
+        b.textContent='請長按';
+        setTimeout(function(){b.textContent='複製'},1600);
+      });
+    });
+  });
   var start=0; try{var s=localStorage.getItem('sz-ski-page'); if(s!==null)start=+s;}catch(e){}
   show(start);
   document.querySelectorAll('#cl input[type=checkbox]').forEach(function(b){
